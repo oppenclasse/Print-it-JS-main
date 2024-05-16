@@ -17,5 +17,25 @@ const slides = [
 	}
 ]
 
-const buttonDroite = document.querySelector(".right");
-console.log(buttonDroite);
+let currentIndex = 0;
+
+const buttons = document.querySelectorAll(".arrow");
+
+buttons.forEach((button) =>{
+	button.addEventListener("click", (e) => {
+		const calcNextSlide = e.target.id === "left" ? -1 : 1
+		console.log(calcNextSlide);
+	})
+})
+
+function afficheSlide (index) {
+	const slide = slides[index];
+	const image = document.querySelector('.banner-img');
+    const tagLine = document.getElementById('tagLine');
+	image.src = `./assets/images/slideshow/${slide.image}`;
+	tagLine.innerHTML = slide.tagLine;
+	
+}
+
+
+afficheSlide(currentIndex);
