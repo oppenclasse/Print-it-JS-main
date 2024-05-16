@@ -19,8 +19,12 @@ const slides = [
 
 
 let currentIndex = 0;
-document.querySelector('.arrow_left').addEventListener('click', prevSlide);
-document.querySelector('.arrow_right').addEventListener('click', nextSlide);
+
+const arrowLeft = document.querySelector('.arrow_left');
+const arrowRight = document.querySelector('.arrow_right');
+
+arrowLeft.addEventListener('click', prevSlide);
+arrowRight.addEventListener('click', nextSlide);
 
 // Fonction pour passer à la diapositive suivante-----------------------
 function nextSlide() {
